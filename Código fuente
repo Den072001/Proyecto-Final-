@@ -1,0 +1,99 @@
+#include <iostream>
+#include <stdio.h>
+#include <windows.h> // SLEEP()
+ 
+int main() {
+
+	int k,n;
+	float s,p,x;
+{
+	// EL USUARIO DIGITARA EN QUE HORA,MINUTO,SEGUNDO
+	int tipo;
+	printf("BUEN DIA SR.");
+	printf("\nEsta es nuestra tabla de eleccion de frecuencia : ");
+	printf("\n                                1. Dias");
+	printf("\n                                2. Horas");
+	printf("\n                                3. Minutos");
+	printf("\n                                4. Segundos");
+	printf("\n\n¿Con que frecuencia gusta que le recuerde hacer su lista de compras(dias, horas , minutos , segundos )? Agregue el numero de su eleccion con base en la tabla anterior, por favor : ");
+	scanf("%i", &tipo);
+ 
+	// EL USUARIO DIGITARA LA CANTIDAD DE HORAS MINUTOS O SEGUNDOS
+	int cantidad;
+	printf("\n¿Cada cuantos dias?");
+	scanf("%i" , &cantidad);
+ 
+	// CREAMOS LAS VARIABLES PARA LAS HORAS , MINUTOS , SEGUNDOS
+	int dia,hora,minuto,segundo;
+ 
+ 
+	// 3 BUCLES ANIDADOS DE TIPO FOR , 3 = HORAS ,MINUTOS,SEGUNDOS
+	for (dia=9; dia<=30; dia++)
+	{
+		for (hora=23; hora<24; hora++ )
+	{
+		for (minuto=59; minuto<60; minuto++ )
+ 
+	{
+		for (segundo=56; segundo<60; segundo++ )
+		{
+			// AGREGAMOS UN INTERVALO DE 1000 MS = 1 SEGUNDO
+			Sleep(1000);
+ 
+ 
+			// IMPRIMIR NUESTRO CRONOMETRO
+			printf("\r %.2i : %.2i : %.2i : %i " , dia, hora , minuto , segundo );
+ 
+			// CONDICIONAL PARA LOS DIAS
+			if (tipo == 1 && cantidad <= dia)
+			{
+				printf("\n\n¿Cuantos articulos nos faltan en nuestra despensa, en esta ocasion?, Recuerda, no debes comprar mas de los establecidos para evitar hacer un consumo innecesario.");
+				scanf(" %d",&k);
+float a[k];
+for(n = 0; n<k; n++){
+printf("¿Que costo aproximado deseas agregar a este producto? %d $",n+1);
+scanf(" %f",&x);
+a[n] = x;
+}
+printf("\nNuestra lista de compras es:\n");
+s = 0.0;
+for(n = 0; n<k; n++){
+printf("Producto %d = $%f\n",n+1,a[n]);
+s = s + a[n];
+}
+p =s+a[n];
+printf("\nEl dia de hoy haremos un gasto total de:   $%f\n",p);
+return 0;
+			}
+			
+			//CONDICIONAL PARA LAS HORAS
+			else if (tipo == 2 && cantidad <= hora)
+			{
+				printf("\n¿Cuantos articulos nos faltan en nuestra despensa, en esta ocasion?, Recuerda, no debes comprar mas de los establecidos para evitar hacer un consumo innecesario.");
+				return 0;
+			}
+ 
+			// CONDICIONAL PARA LOS MINUTOS
+			else if (tipo == 3 && cantidad <= minuto)
+			{
+				printf("\n¿Cuantos articulos nos faltan en nuestra despensa, en esta ocasion?, Recuerda, no debes comprar mas de los establecidos para evitar hacer un consumo innecesario.");
+				return 0;
+			}
+			// CONDICIONAL PARA LOS SEGUNDOS
+			else if (tipo == 4 && cantidad <= segundo)
+			{
+				printf("\n¿Cuantos articulos nos faltan en nuestra despensa, en esta ocasion?, Recuerda, no debes comprar mas de los establecidos para evitar hacer un consumo innecesario.");
+				return 0;
+			}
+ 
+ 
+ 
+		}
+		}
+		}
+	}
+ 
+ 
+	return 0;
+	}
+}
